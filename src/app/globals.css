@@ -25,3 +25,70 @@ body {
     text-wrap: balance;
   }
 }
+
+.text-shadow {
+  text-shadow: 2px 2px 0 #ffffff, -2px -2px 0 #ffffff, 2px -2px 0 #ffffff,
+    -2px 2px 0 #ffffff;
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  white-space: nowrap;
+}
+
+.animate-marquee::before,
+.animate-marquee::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(30px);
+  }
+  25% {
+    transform: translateX(-30px);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+  75% {
+    transform: translateX(-30px);
+  }
+}
+
+.shake-animation {
+  animation: shake 10s infinite;
+}
+
+@keyframes shake2 {
+  0%,
+  100% {
+    transform: translateX(10px);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+}
+
+.shake-animation2 {
+  animation: shake2 10s infinite;
+}
