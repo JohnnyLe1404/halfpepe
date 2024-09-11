@@ -1,42 +1,42 @@
-'use client'
+"use client";
 
-import React, { useState } from "react"
-import { Schoolbell, Chivo } from "next/font/google"
+import React, { useState } from "react";
+import { Schoolbell, Chivo } from "next/font/google";
+import Link from "next/link";
 
 const schoolbell = Schoolbell({
   subsets: ["latin"],
   weight: "400",
-})
+});
 
 const chivo = Chivo({
   subsets: ["latin"],
   weight: "400",
-})
-
+});
 const CopyTextComponent = ({
   textColor = "text-black",
   borderColor = "border-black",
 }) => {
   const [text, setText] = useState(
     "YcUzxsUL4wTETS1qWe5HsgCHNaQz9wddcoL2L62xn7k"
-  )
-  const [copied, setCopied] = useState(false)
+  );
+  const [copied, setCopied] = useState(false);
 
   const handleClick = () => {
-    navigator.clipboard.writeText(text)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 1000)
-  }
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1000);
+  };
 
   return (
     <h1
-      className={`p-2 sm:p-4 text-lg sm:text-2xl font-semibold ${textColor} bg-[#4b9143] border ${borderColor} rounded-full cursor-pointer`}
+      className={`p-2 sm:p-4 text-sm sm:text-lg font-semibold ${textColor} bg-[#4b9143] border ${borderColor} rounded-full cursor-pointer text-center max-w-full overflow-hidden text-ellipsis`}
       onClick={handleClick}
     >
       {copied ? "Copied" : text}
     </h1>
-  )
-}
+  );
+};
 
 export default function Home() {
   return (
@@ -61,31 +61,31 @@ export default function Home() {
           </h1>
           <CopyTextComponent />
 
-          <div className="flex flex-wrap justify-center mt-6 space-x-0 space-y-4 sm:space-y-0 sm:space-x-4">
-            <a
+          <div className="flex flex-col items-center justify-center w-full gap-4 px-4 mt-6 sm:flex-row sm:gap-6">
+            <Link
               href="https://twitter.com/your-twitter-handle"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#4b9143] font-semibold w-full sm:w-[162px] border border-black rounded-2xl p-4 text-black text-xl sm:text-2xl block text-center hover:rotate-3 hover:scale-110"
+              className="bg-[#4b9143] font-semibold w-full max-w-[300px] sm:max-w-[162px] border border-black rounded-2xl p-3 sm:p-4 text-black text-lg sm:text-xl md:text-2xl text-center hover:rotate-3 hover:scale-110 transition-all duration-300"
             >
               Twitter
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://t.me/your-telegram-handle"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#4b9143] font-semibold w-full sm:w-[162px] border border-black rounded-2xl p-4 text-black text-xl sm:text-2xl block text-center hover:rotate-3 hover:scale-110"
+              className="bg-[#4b9143] font-semibold w-full max-w-[300px] sm:max-w-[162px] border border-black rounded-2xl p-3 sm:p-4 text-black text-lg sm:text-xl md:text-2xl text-center hover:rotate-3 hover:scale-110 transition-all duration-300"
             >
               Telegram
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://dexscreener.com/your-dexscreener-link"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#4b9143] font-semibold w-full sm:w-[162px] border border-black rounded-2xl p-4 text-black text-xl sm:text-2xl block text-center hover:rotate-3 hover:scale-110"
+              className="bg-[#4b9143] font-semibold w-full max-w-[300px] sm:max-w-[162px] border border-black rounded-2xl p-3 sm:p-4 text-black text-lg sm:text-xl md:text-2xl text-center hover:rotate-3 hover:scale-110 transition-all duration-300"
             >
               Dexscreen
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -317,5 +317,5 @@ export default function Home() {
         </p>
       </div>
     </>
-  )
+  );
 }
